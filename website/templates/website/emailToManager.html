@@ -1,0 +1,15 @@
+<h1>Demande d'impression de poster</h1>
+
+Le {{ now.day }}/{{ now.month }}/{{ now.year }}<br>
+<p>
+    {{newDemand.name}} {{newDemand.firstname}} demande l'impression de son poster : {{newDemand.file.name}}
+</p>
+{% if not newDemand.comment == "" %}
+    <p>Avec un commentaire : {{newDemand.comment}}</p>
+{% endif %}
+<b>Email :</b> {{newDemand.email}}<br>
+<b>Phone :</b> {{newDemand.phoneNumber}}<br>
+<b>Building :</b> {{newDemand.building}}<br>
+<b>Office :</b> {{newDemand.office}}<br>
+<b>Minimum Delivery Date :</b> {{newDemand.minimumDate}}<br>
+<b>Printing Format : </b> {{newDemand.height}} / {{newDemand.width}} cm<br>

@@ -1,0 +1,119 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Poster Request Manager" %}</title>
+    <link rel="stylesheet" href="{% static 'website/index.css'%}" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="logo">Poster Request Manager</div>
+        <form action="{% url 'set_language' %}" class="changeLanguageForm" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{redirect_to}}">
+            <div class="lang-select--container">
+                <select name="language" class="lang-select">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        {% if language.code == LANGUAGE_CODE %}
+                        <option value="{{ language.code }}" selected >
+                        {% else %}
+                        <option value="{{ language.code }}">
+                        {% endif %}
+                            {{language.name_local}} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="Go">
+        </form>
+    </header>
+    <div class="main-container">
+        <form action="{% url 'new-demand' %}" class="main-form" name="main-form" onsubmit="validateData()" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if 'error' in request.GET %}
+            <div class="error">{{request.GET.error}}</div>
+            {% endif %}
+            <div class="parts">
+                <div class="first-part is-opened">
+                    <h1>{% trans "Your Informations" %}</h1>
+                    <div class="input-group">
+                        <label for="name">{% trans "Name :" %}</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="firstname">{% trans "Firstname :"%}</label>
+                        <input type="text" name="firstname" id="firstname" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">{% trans "Email :"%}</label>
+                        <input type="text" name="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phoneNumber">{% trans "Phone Number :" %}</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="building">{% trans "Building :" %}</label>
+                        <input type="text" name="building" id="building" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="office">{% trans "Office :" %}</label>
+                        <input type="text" name="office" id="office" required>
+                    </div>
+                </div>
+                <div class="second-part">
+                    <h1>{% trans "Your poster" %}</h1>
+                    <div class="input-group uploadFile">
+                        <input type="file" name="file" id="file" required accept=".pdf, .ppt, .pptx">
+                        <span id="file-select-button" class="uploadFileButton">{% trans "Upload your file (.pdf, .ppt, .pptx)" %}</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="minimumDate">{% trans "Minimum delivery date :" %}</label>
+                        <input type="date" name="minimumDate" id="minimumDate" required>
+                    </div>
+                    <div class="button-group">
+                        <label>{% trans "Choose your poster size :" %}</label>
+                        <div class="size-buttons">
+                            <input type="hidden" name="type" value="A0">
+                            <button data-height="118.9" data-width="84.1" class="selected">{% trans "A0 (118,9 x 84,1 cm)" %}</button>
+                            <button data-height="129" data-width="91">{% trans "A0+ Oversize (129 x 91 cm)" %}</button>
+                            <button id="otherFormatButton">{% trans "Other Format..." %}</button>
+                        </div>
+                        <div class="otherFormatsInputs is-hidden">
+                            <label>{% trans "Other Format :" %}</label>
+                            <div class="size-input-groups">
+                                <div class="size-input-group">
+                                    <label for="height">{% trans "Height (cm) :" %}</label>
+                                    <input type="number" name="height" id="height" min="0" step="0.1" value="118.9" required>
+                                </div>
+                                <div class="size-input-group">
+                                    <label for="width">{% trans "Width (cm) :" %}</label>
+                                    <input type="number" name="width" id="width" min="0" step="0.1" value="84.1" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group comments-group">
+                        <label for="comments">{% trans "Comments :" %}</label>   
+                        <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="btnOptions">
+                <div class="button-back is-hidden"><img src="{% static 'website/icons/chevron-left.svg'%}" alt="" srcset=""></div>
+                <input type="submit" value="{% trans "Submit" %}" class="is-hidden notValidated" id="submitButton"></input>
+                <div class="button-forward"><img src="{% static 'website/icons/chevron-right.svg'%}" alt="" srcset=""></div>
+            </div>
+        </form>
+    </div>
+    <footer></footer>
+    <script src="{% static '/website/index.js' %}"></script>
+</body>
+</html>
+

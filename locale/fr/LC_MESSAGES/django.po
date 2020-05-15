@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-12 14:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: posterDemands/settings.py:127
+msgid "English"
+msgstr "Anglais"
+
+#: posterDemands/settings.py:128
+msgid "French"
+msgstr "Francais"
+
+#: website/templates/website/index.html:8
+msgid "Poster Request Manager"
+msgstr "Gestionnaire de la demande de posters"
+
+#: website/templates/website/index.html:37
+msgid "Your Informations"
+msgstr "Vos informations"
+
+#: website/templates/website/index.html:39
+msgid "Name :"
+msgstr "Nom :"
+
+#: website/templates/website/index.html:43
+msgid "Firstname :"
+msgstr "Prénom :"
+
+#: website/templates/website/index.html:47
+msgid "Phone Number :"
+msgstr "Numéro de téléphone :"
+
+#: website/templates/website/index.html:51
+msgid "Building :"
+msgstr "Batiment :"
+
+#: website/templates/website/index.html:55
+msgid "Office :"
+msgstr "Bureau :"
+
+#: website/templates/website/index.html:60
+msgid "Your poster"
+msgstr "Votre Poster"
+
+#: website/templates/website/index.html:62
+msgid "Upload your file (.pdf, .ppt, .pptx) :"
+msgstr "Téléversez votre fichier (.pdf, .ppt, .pptx) :"
+
+#: website/templates/website/index.html:66
+msgid "Minimum delivery date :"
+msgstr "Date de livraison minimum :"
+
+#: website/templates/website/index.html:71
+msgid "A0 (118,9 x 84,1 cm)"
+msgstr ""
+
+#: website/templates/website/index.html:72
+msgid "A0+ Oversize (129 x 91 cm)"
+msgstr ""
+
+#: website/templates/website/index.html:73
+msgid "Other Format"
+msgstr "Autre Format"
+
+#: website/templates/website/index.html:76
+msgid "Width :"
+msgstr "Largeur :"
+
+#: website/templates/website/index.html:78
+msgid "Height :"
+msgstr "Hauteur :"
+
+#: website/templates/website/index.html:82
+msgid "Comments :"
+msgstr "Commentaires :"
+
+#: website/templates/website/index.html:88
+msgid "Submit"
+msgstr "Soumettre"
+
+#: website/views.py:10
+msgid "test"
+msgstr "Un test de l'appli traduite en français yes"
+

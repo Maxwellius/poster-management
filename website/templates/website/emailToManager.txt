@@ -1,0 +1,15 @@
+Demande d'impression de poster
+Le {{ now.day }}/{{ now.month }}/{{ now.year }}
+
+{{newDemand.name}} {{newDemand.firstname}} demande l'impression de son poster : {{newDemand.file.name}}
+{% if not newDemand.comment == "" %}
+    Avec un commentaire : {{newDemand.comment}}
+{% endif%}
+Name : {{newDemand.name}}
+FirstName : {{newDemand.firstname}}
+Email : {{newDemand.email}}
+Phone : {{newDemand.phoneNumber}}
+Building : {{newDemand.building}}
+Office : {{newDemand.office}}
+Minimum Delivery Date : {{newDemand.minimumDate}}
+Printing Format : {{newDemand.height}} / {{newDemand.width}} cm

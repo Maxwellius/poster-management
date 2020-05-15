@@ -1,0 +1,12 @@
+Votre demande a bien été prise en compte !
+
+Name : {{newDemand.name}}
+FirstName : {{newDemand.firstname}}
+Email : {{newDemand.email}}
+Phone : {{newDemand.phoneNumber}}
+Building : {{newDemand.building}}
+Office : {{newDemand.office}}
+Minimum Delivery Date : {{newDemand.minimumDate}}
+Printing Format : {{newDemand.height}} / {{newDemand.width}} cm
+
+Comments : {{newDemand.comments}}

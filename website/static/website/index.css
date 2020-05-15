@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+header{
+    background-color: #1D3557;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.changeLanguageForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.changeLanguageForm input[type="submit"]{
+    background-color: #E63946;
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    width: 50px;
+    margin-left: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lang-select--container {
+    position: relative;
+    width: 150px;
+    height: 30px;
+    background-color: #F1FAEE;
+    border: solid 0.5px black;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+.lang-select--container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 110%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #F1FAEE;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lang-select--container::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 5px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-top-color: #444;
+    border-width: 6px;
+    border-style: solid;
+    pointer-events: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-container{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F1FAEE;
+}
+
+.main-form{
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    background-color: #A8DADC;
+    border-radius: 8px;
+    padding: 50px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* main Form design */
+
+h1{
+    font-size: 30;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.first-part, .second-part{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.is-opened{
+    display: flex;
+}
+
+.input-group{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-group>label{
+    margin-bottom: 5px;
+}
+
+.input-group>input[type="text"], .input-group>input[type="date"]{
+    height: 40px;
+    border-radius: 8px;
+    border: solid 0.5px gray;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#file{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 3px;
+    height: 1px;
+    width: 1px;
+    z-index: -5;
+}
+
+#file-select-button{
+    background-color: #457B9D;
+    border: none;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#file-select-button:hover {
+    background-color: #1D3557;
+}
+
+.button-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #457B9D;
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    text-align: center;
+    padding: 10px;
+    line-height: 10px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button-group button:hover, .button-group button.selected{
+    background-color: #1D3557;
+}
+
+.button-group>label{
+    margin-bottom: 5px;
+}
+
+.size-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.otherFormatsInputs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: #457B9D;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+.size-input-groups{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.size-input-group{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.size-input-group>label{
+    margin-bottom: 10px;
+}
+
+.size-input-group>input{
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.comments-group{
+    margin-top: 10px;
+}
+
+.comments-group>textarea{
+    border-radius: 8px;
+    border: 1px solid black;
+    resize: none;
+    padding: 5px;
+    font-family: sans-serif;
+}
+.otherFormatsInputs>label{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.btnOptions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button-back, .button-forward{
+    color: white;
+    padding: 20px;
+    height: 20px;
+    width: 20px;
+    font-size: 25px;
+    background-color: #457B9D; 
+    border-radius: 100%;
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-back:hover, .button-forward:hover{
+    background-color: #1D3557;
+}
+
+.btnOptions .disabled, .btnOptions input[type="submit"].notValidated{
+    background-color: gray;
+}
+
+.btnOptions input[type="submit"]{
+    background-color: #E63946;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+    width: 150px;
+    margin: 0 25px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.is-hidden{
+    display: none !important;
+}
+
+.error{
+    background-color : #ff6666;
+    border: 4px solid red;
+    padding: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
